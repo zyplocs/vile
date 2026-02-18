@@ -47,20 +47,20 @@
   <DemoTabs />
   <div style="margin-left:auto"></div>
   <label class="row" for="hiFiToggle" style="gap:.5rem; align-items:center">
-    <input id="hiFiToggle" type="checkbox" bind:checked={$hiFi} /> High‑fidelity
+    <input id="hiFiToggle" type="checkbox" bind:checked={$hiFi} /> High-fidelity
   </label>
+</div>
+
+<div class="grid" hidden={$currentDemo.id === 'search'} aria-hidden={$currentDemo.id === 'search'}>
+  <div class="panel">
+    <Controls />
+    <Calibration />
+  </div>
+  <div class="canvasWrap">
+    <canvas bind:this={canvas} width="1280" height="720"></canvas>
+  </div>
 </div>
 
 {#if $currentDemo.id === 'search'}
   <Search />
-{:else}
-  <div class="grid">
-    <div class="panel">
-      <Controls />
-      <Calibration />
-    </div>
-    <div class="canvasWrap">
-      <canvas bind:this={canvas} width="1280" height="720"></canvas>
-    </div>
-  </div>
 {/if}
