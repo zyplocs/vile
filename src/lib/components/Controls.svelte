@@ -6,8 +6,6 @@
   let p: Params = get(params);
   $: p = $params;
 
-  function clamp(v:number, lo:number, hi:number){ return Math.max(lo, Math.min(hi, v)); }
-
   function update<K extends keyof Params>(k: K, v: Params[K]){
     params.update(s => ({ ...s, [k]: v }));
   }
